@@ -1,1 +1,13 @@
 game/csgo/bin/win64/server.dll
+game/csgo/bin/win64/matchmaking.dll
+game/csgo/bin/win64/host.dll
+game/bin/win64/engine2.dll
+game/bin/win64/tier0.dll
+game/bin/win64/worldrenderer.dll
+game/bin/win64/vphysics2.dll
+game/bin/win64/schemasystem.dll
+game/bin/win64/soundsystem.dll
+game/bin/win64/resourcesystem.dll
+game/bin/win64/networksystem.dll
+game/bin/win64/filesystem_stdio.dll
+game/bin/win64/navsystem.dll

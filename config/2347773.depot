@@ -1,1 +1,13 @@
 game/csgo/bin/linuxsteamrt64/libserver.so
+game/csgo/bin/linuxsteamrt64/libmatchmaking.so
+game/csgo/bin/linuxsteamrt64/libhost.so
+game/bin/linuxsteamrt64/libengine2.so
+game/bin/linuxsteamrt64/libtier0.so
+game/bin/linuxsteamrt64/libworldrenderer.so
+game/bin/linuxsteamrt64/libvphysics2.so
+game/bin/linuxsteamrt64/libschemasystem.so
+game/bin/linuxsteamrt64/libsoundsystem.so
+game/bin/linuxsteamrt64/libresourcesystem.so
+game/bin/linuxsteamrt64/libnetworksystem.so
+game/bin/linuxsteamrt64/libfilesystem_stdio.so
+game/bin/linuxsteamrt64/libnavsystem.so
