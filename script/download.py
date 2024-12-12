@@ -6,18 +6,14 @@ import json5
 
 
 def download_file(url, save_path):
-    try:
-        response = requests.get(url)
-        response.raise_for_status()
+    response = requests.get(url)
+    response.raise_for_status()
 
-        filename = os.path.basename(url)
-        file_path = save_path + filename
+    filename = os.path.basename(url)
+    file_path = save_path + filename
 
-        with open(file_path, "wb") as file:
-            file.write(response.content)
-
-    except requests.exceptions.RequestException as e:
-        print(f"Download file error: {e}")
+    with open(file_path, "wb") as file:
+        file.write(response.content)
 
 
 def download_depot(depot_file: str):
