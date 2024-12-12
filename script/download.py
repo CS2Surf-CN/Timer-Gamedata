@@ -54,7 +54,6 @@ def find_depot_files(directory):
 
 if __name__ == "__main__":
     config_gamedata = read_jsonc("../config/download.jsonc")
-
     for url in config_gamedata["urls"]:
         download_file(url, "../gamedata/")
 

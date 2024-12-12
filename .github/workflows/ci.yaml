@@ -22,3 +22,6 @@ jobs:
 
       - name: Download depots and gamedata
         run: python3 ./download.py
+
+      - name: Check gamedata
+        run: python3 ./gamedata.py
