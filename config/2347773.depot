@@ -11,3 +11,4 @@ game/bin/linuxsteamrt64/libresourcesystem.so
 game/bin/linuxsteamrt64/libnetworksystem.so
 game/bin/linuxsteamrt64/libfilesystem_stdio.so
 game/bin/linuxsteamrt64/libnavsystem.so
+game/bin/linuxsteamrt64/libsteamnetworkingsockets.so

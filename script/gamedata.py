@@ -67,10 +67,10 @@ class GamedataCheck:
         self.lib_pe[library][platform] = open(file_path, "rb")
         return self.lib_pe[library][platform]
 
-    def read_files_in_directory(self):
+    def read_files_in_directory(self, gamedata_dir):
         result = dict()
-        for filename in os.listdir(self.gamedata_dir):
-            path = os.path.join(self.gamedata_dir, filename)
+        for filename in os.listdir(gamedata_dir):
+            path = os.path.join(gamedata_dir, filename)
             if os.path.isfile(path):
                 with open(path, "r", encoding="utf-8") as file:
                     if os.path.basename(path).endswith("placeholder"):
@@ -110,7 +110,7 @@ class GamedataCheck:
 if __name__ == "__main__":
     checker = GamedataCheck("../cs2/game/", "../gamedata")
 
-    result = checker.read_files_in_directory()
+    result = checker.read_files_in_directory(checker.gamedata_dir)
     os_output = {}
 
     for library_name, os_data in result.items():

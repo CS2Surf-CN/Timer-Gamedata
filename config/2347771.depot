@@ -11,3 +11,4 @@ game/bin/win64/resourcesystem.dll
 game/bin/win64/networksystem.dll
 game/bin/win64/filesystem_stdio.dll
 game/bin/win64/navsystem.dll
+game/bin/win64/steamnetworkingsockets.dll
