@@ -1,6 +1,7 @@
 import os
 import re
 import json5
+from datetime import datetime, timezone
 
 
 class GamedataCheck:
@@ -119,18 +120,53 @@ if __name__ == "__main__":
                 os_output[os_name] = []
             os_output[os_name].append((library_name, keys))
 
+    last_updated = f"## Last updated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')} UTC"
+
+    html_output = []
+    html_output.append(last_updated)
+    html_output.append("<table>")
+    html_output.append(
+        "<tr><th>Platform</th><th>Library</th><th>Signature</th><th>Count</th><th>Status</th></tr>"
+    )
+
     bad_sig = False
     for os_name, libraries in os_output.items():
-        has_output = False
+        total_rows = sum(len(keys) + 1 for _, keys in libraries if keys)
+
+        platform_rowspan_added = False
         for library_name, keys in libraries:
-            if keys:
-                if not has_output:
-                    print(f"{os_name}:")
-                    has_output = True
-                print(f"  Library: {library_name}")
-                bad_sig = True
-                for key, value in keys.items():
-                    print(f"    [{value}] {key}")
+            if not keys:
+                continue
+
+            bad_sig = True
+            if not platform_rowspan_added:
+                html_output.append(
+                    f"<tr><td rowspan='{total_rows}'>{os_name.capitalize()}</td>"
+                )
+                platform_rowspan_added = True
+            else:
+                html_output.append("<tr>")
+
+            html_output.append(
+                f"<td rowspan='{len(keys) + 1}'>{library_name}</td></tr>"
+            )
+
+            for key, count in keys.items():
+                html_output.append(
+                    f"<tr><td>{key}</td><td>{count}</td><td>❌</td></tr>"
+                )
 
     if not bad_sig:
-        print("All signature and address are good.")
+        html_output.clear()
+        html_output.append(last_updated)
+        html_output.append("<table>")
+        html_output.append("<tr><th>Platform</th><th>Status</th></tr>")
+        html_output.append(f"<tr><td>Windows</td><td>✅</td></tr>")
+        html_output.append(f"<tr><td>Linux</td><td>✅</td></tr>")
+
+    html_output.append("</table>")
+
+    with open("../README.md", "w", encoding="utf-8") as f:
+        f.write("\n".join(html_output))
+
+    print("Gamedata check has been done!")
