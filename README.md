@@ -1,4 +1,4 @@
-## Last updated: 2024-12-31 08:30:40 UTC
+## Last updated: 2025-01-08 00:27:11 UTC
 <table>
 <tr><th>Platform</th><th>Status</th></tr>
 <tr><td>Windows</td><td>✅</td></tr>
