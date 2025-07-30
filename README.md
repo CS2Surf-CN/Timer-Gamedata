@@ -1,4 +1,4 @@
-## Last updated: 2025-07-29 01:31:49 UTC
+## Last updated: 2025-07-30 00:32:04 UTC
 <table>
 <tr><th>Platform</th><th>Library</th><th>Signature</th><th>Count</th><th>Status</th></tr>
 <tr><td rowspan='24'>Windows</td>
